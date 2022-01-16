@@ -6,6 +6,7 @@ export default class challenge001{
     constructor(){
         this.code = `
         <link rel="stylesheet" href="/styles/challenge001.css">
+            <div class="tip"> <h5 >Digite o seu primeiro nome angelical(Lembrar de vovo kkkk)</h5></div>
             <form class="form" target = "#" method = get>
                 <div>
                 <h3>Informe os dados </h3></div>
@@ -21,41 +22,40 @@ export default class challenge001{
     
     
         `;
+        this.names = ["Ezequiel", "Isildo", "Izildo", "Ezequias"]
+        this.passed = false;
        
     }
-}
-
-
-export function btnClick(){
-    let form = document.getElementById("submeter").addEventListener("click",
-     getData);
-}
-function eventHandler(tipo, selector, callback){
-    document.addEventListener(tipo, e => {
-        if(e.target.matches(selector)){
-            console.log(e.target.innerText);
-            conteudo(e.target.innerText);//A funcao que vai correr
-        }
-    });
-}
-function answers(){
-    return {
-        names:["Ezequiel", "Isildo", "Izildo", "Ezequias"]
+    btnClicked(){//Quando clicar em submeter
+        document.getElementById("submeter").addEventListener("click",
+            ()=>{
+                this.passed = this.isCorrect()
+                console.log(this.passed);
+            }
+         );
+         
+    }
+    getNames(){
+        return this.names;
+    }
+    isCorrect(){
+        console.log(this.getNames());
+        let correct=false;
+        let name = document.getElementById("user");
+        let arr = this.names;
+       console.log(arr);
+       for (let value of arr) {
+            if(value==name.value){
+                correct = true;
+                break;
+            }
+       }
+       return correct;
     }
 }
-function getData(){
-    let name = document.getElementById("user");
-    let arr = answers().names;
-   console.log(arr.length);
-   for (let value of arr) {
-        if(value==name.value){
-            setInterval(function correct(){
-                console.log(`${value} acertou`)
-            }, 2000);
-            break;
-        }else{
-            console.log("Ainda nao achei");
-        }
-   }
-}
+
+
+
+
+
 
