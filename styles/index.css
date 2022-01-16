@@ -50,7 +50,14 @@ body{
 
 }
 button{
-    border: none; background-color: rgba(5, 61, 107, 0.911);
-                    width:200px; height: 60px; color:white; font-weight: bold; font-size: 20px;
-                    margin: 20px; box-shadow: 0px 3px 6px  rgb(0, 0, 0, 0.7); border-radius: 5px;
+    border: none;
+    background-color: rgba(5, 61, 107, 0.911);
+    width:200px; 
+    height: 70px; 
+    color:white; 
+    font-weight: bold; 
+    font-size: 20px;
+    margin: 20px;
+    box-shadow: 0px 3px 6px  rgb(0, 0, 0, 0.7); 
+    border-radius: 5px;
 }

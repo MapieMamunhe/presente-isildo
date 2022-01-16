@@ -5,7 +5,8 @@ export default class challenge001{
 
     constructor(){
         this.code = `
-            <form target = "#" method = get>
+        <link rel="stylesheet" href="/styles/challenge001.css">
+            <form class="form" target = "#" method = get>
                 <div>
                 <h3>Informe os dados </h3></div>
                 <p> <label>Nome</label>
@@ -16,7 +17,7 @@ export default class challenge001{
 
                 <p><input type="button" value="Prosseguir" id="submeter"></p>
             </form>
-            <link rel="stylesheet" href="/styles/challenge001.css">
+            
     
     
         `;

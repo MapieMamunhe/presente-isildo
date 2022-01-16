@@ -12,9 +12,9 @@ form{
   /* background: linear-gradient(to right, #4cee01,#01daee, #00ffaa);*/
        background-color: rgb(5, 61, 107);
    border-radius: 20px;
-  
-   
+   transition: ease-in .7s;
 }
+
 label{
     font-size: 17px;
 }
