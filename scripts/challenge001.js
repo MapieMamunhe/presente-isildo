@@ -30,29 +30,44 @@ export default class challenge001{
         document.getElementById("submeter").addEventListener("click",
             ()=>{
                 this.passed = this.isCorrect()
-                console.log(this.passed);
+                if(this.passed){
+                    localStorage.setItem("challenge001", "completed");
+                }else{
+                    this.wronAnswer();
+                }
             }
          );
          
+    }
+    wronAnswer(){
+        let tip = document.getElementsByTagName("h5")[0];
+        
+        tip.innerHTML = "<h5 class='text-danger'>Filho(a)...Nome de Anjo... Digitar nome de Anjo</h5>";
+        
     }
     getNames(){
         return this.names;
     }
     isCorrect(){
-        console.log(this.getNames());
         let correct=false;
-        let name = document.getElementById("user");
+        let name = this.getUserNameInput();
         let arr = this.names;
-       console.log(arr);
+
        for (let value of arr) {
-            if(value==name.value){
+            if(value==name){
                 correct = true;
                 break;
             }
        }
+
        return correct;
     }
+    getUserNameInput(){
+        let name = document.getElementById("user");
+        return name.value;
+    }
 }
+
 
 
 
