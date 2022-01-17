@@ -11,6 +11,8 @@ function changeColor(){
 
 }*/
 import challenge001 from "./challenge001.js";
+import challenge002 from "./challenge002.js";
+import challenge003 from "./challenge003.js";
 const CHALLENGES = {
     "challenge001":"uncomplete",
     "challenge002":"uncomplete",
@@ -28,14 +30,19 @@ async function comecar(){
     switch(getNextUncompleteChallenge()){
         case "challenge001":
             getChallange001();
+            console.log(getNextUncompleteChallenge());
             break;
             case "challenge002":
+               getChallange002();
             break;
             case "challenge003":
+                getChallange003();
             break;
             case "challenge004":
+                //alert("Novos desafios");
             break;
             case "challenge005":
+                //alert("Novos desafios");
             break;
             default:
                 break;
@@ -43,6 +50,22 @@ async function comecar(){
     
 }
 
+function challengeCompletedMessage(challenge){
+    if(!isChallangeComplete(challenge)){
+        console.log(challenge);
+        return;
+    }
+    let loadNextChallenge = document.querySelector(".content div");
+        loadNextChallenge.innerHTML = `
+        <div class="text-success">
+            Parabens!
+        </div>
+        <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      `;
+      setTimeout(()=>{comecar()}, 1500);//TODO spinner e etc
+}
 
 function spinner(){
     //Essa funcao e para fazer o utilizador esperar um pouco enquanto 
@@ -72,13 +95,46 @@ function getNextUncompleteChallenge(){
     }
     return -1;
 }
+function setGameContent(code){
+    let challenge = document.querySelector(".content div");
+    challenge.innerHTML = code;
+}
 
 function getChallange001(){
     let u = new challenge001();
-    let challenge = document.querySelector(".content div");
-    challenge.innerHTML = u.code;
+   
+    setGameContent(u.code);
     //u.wronAnswer();
     u.btnClicked();
+    submitEvent("challenge001");
     //spinner();
+}
 
+function submitEvent(challenge){
+    document.getElementById("submeter")
+    .addEventListener("click", 
+    function (){
+        challengeCompletedMessage(challenge);
+    });
+}
+
+function getChallange002(){
+    let f = new challenge002();
+    setGameContent(f.code);
+    f.btnClicked();
+    submitEvent("challenge002");
+}
+function isChallangeComplete(challenge){
+    if(getNextUncompleteChallenge() != challenge){
+        return true;
+    }
+    return false;
+}
+
+function getChallange003(){
+    let g = new challenge003();
+    setGameContent(g.code);
+    
+    //g.btnClicked();
+    //submitEvent("challenge003");
 }

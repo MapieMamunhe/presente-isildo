@@ -27,19 +27,20 @@ export default class challenge001{
        
     }
     btnClicked(){//Quando clicar em submeter
-        document.getElementById("submeter").addEventListener("click",
+        let btn = document.getElementById("submeter");
+        btn.addEventListener("click",
             ()=>{
                 this.passed = this.isCorrect()
                 if(this.passed){
                     localStorage.setItem("challenge001", "completed");
                 }else{
-                    this.wronAnswer();
+                    this.wrongAnswer();
                 }
             }
          );
          
     }
-    wronAnswer(){
+    wrongAnswer(){
         let tip = document.getElementsByTagName("h5")[0];
         
         tip.innerHTML = "<h5 class='text-danger'>Filho(a)...Nome de Anjo... Digitar nome de Anjo</h5>";
@@ -56,6 +57,7 @@ export default class challenge001{
        for (let value of arr) {
             if(value==name){
                 correct = true;
+                localStorage.setItem("aniversariante", value);
                 break;
             }
        }
