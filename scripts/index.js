@@ -39,7 +39,7 @@ async function comecar(){
                 getChallange003();
             break;
             case "challenge004":
-                //alert("Novos desafios");
+                alert("Novos desafios");
             break;
             case "challenge005":
                 //alert("Novos desafios");
@@ -61,7 +61,7 @@ function challengeCompletedMessage(challenge){
             Parabens!
         </div>
         <div class="spinner-border" role="status">
-        <span class="sr-only">Loading...</span>
+            
       </div>
       `;
       setTimeout(()=>{comecar()}, 1500);//TODO spinner e etc
@@ -134,7 +134,7 @@ function isChallangeComplete(challenge){
 function getChallange003(){
     let g = new challenge003();
     setGameContent(g.code);
-    
-    //g.btnClicked();
-    //submitEvent("challenge003");
+
+    g.btnClicked();
+    submitEvent("challenge003");
 }
