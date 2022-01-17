@@ -13,6 +13,8 @@ function changeColor(){
 import challenge001 from "./challenge001.js";
 import challenge002 from "./challenge002.js";
 import challenge003 from "./challenge003.js";
+import challenge004 from "./challenge004.js";
+
 const CHALLENGES = {
     "challenge001":"uncomplete",
     "challenge002":"uncomplete",
@@ -39,10 +41,10 @@ async function comecar(){
                 getChallange003();
             break;
             case "challenge004":
-                alert("Novos desafios");
+                getChallange004();
             break;
             case "challenge005":
-                //alert("Novos desafios");
+                alert("Novos desafios");
             break;
             default:
                 break;
@@ -55,6 +57,7 @@ function challengeCompletedMessage(challenge){
         console.log(challenge);
         return;
     }
+    
     let loadNextChallenge = document.querySelector(".content div");
         loadNextChallenge.innerHTML = `
         <div class="text-success">
@@ -86,6 +89,7 @@ async function setGameVariables(){
             console.log(localStorage.getItem(value))
         }
     }
+    localStorage.setItem("hintNumber", "87 38 54 676");
 }
 function getNextUncompleteChallenge(){
     for (const value in CHALLENGES) {
@@ -137,4 +141,11 @@ function getChallange003(){
 
     g.btnClicked();
     submitEvent("challenge003");
+}
+function getChallange004(){
+    let h = new challenge004();
+    setGameContent(h.code);
+
+    h.btnClicked();
+    submitEvent("challenge004");
 }
