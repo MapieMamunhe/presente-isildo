@@ -14,6 +14,7 @@ import challenge001 from "./challenge001.js";
 import challenge002 from "./challenge002.js";
 import challenge003 from "./challenge003.js";
 import challenge004 from "./challenge004.js";
+import challenge005 from "./challenge005.js";
 
 const CHALLENGES = {
     "challenge001":"uncomplete",
@@ -24,15 +25,13 @@ const CHALLENGES = {
 };//DESAFIOS
 //Por onde realmente comeca TODO
 let btn = document.querySelector("button");
-btn.addEventListener("click", spinner);
+btn.addEventListener("click", comecar);
 
 async function comecar(){
     setGameVariables();
-    console.log();
     switch(getNextUncompleteChallenge()){
         case "challenge001":
             getChallange001();
-            console.log(getNextUncompleteChallenge());
             break;
             case "challenge002":
                getChallange002();
@@ -44,9 +43,10 @@ async function comecar(){
                 getChallange004();
             break;
             case "challenge005":
-                alert("Novos desafios");
+                getChallange005();
             break;
             default:
+                terminar();
                 break;
     }
     
@@ -58,28 +58,47 @@ function challengeCompletedMessage(challenge){
         return;
     }
     
-    let loadNextChallenge = document.querySelector(".content div");
-        loadNextChallenge.innerHTML = `
-        <div class="text-success">
-            Parabens!
+    spinner();
+
+    if(localStorage.getItem("challenge005")!="completed"){
+        setTimeout(()=>{comecar()}, 1500);//TODO spinner e etc
+    }else{
+        setTimeout(()=>{terminar()}, 2000);//TODO spinner e etc
+    }
+
+}
+
+function terminar(){
+    let spinner = document.querySelector(".content div");
+        spinner.innerHTML = `
+
+        <div class="text-success" style="text-align:center;">
+            Parabens! Conseguiu concluir todos Desafios
+            <p>Teras agora o premio maximo</p>
         </div>
-        <div class="spinner-border" role="status">
-            
-      </div>
+            <div class="spinner-border" role="status"></div>
+        <div>
+        <h3>
+            <a href="/portfolio.html" target="_blank" class="btn btn-primary btn-lg enabled" role="button" aria-disabled="true">
+                Me clique </a>
+            </h3>
+       </div>
       `;
-      setTimeout(()=>{comecar()}, 1500);//TODO spinner e etc
 }
 
 function spinner(){
     //Essa funcao e para fazer o utilizador esperar um pouco enquanto 
     //O html le no
-   /* let spinner = document.querySelector(".content div");
-        spinner.innerHTML = `<div class="spinner-border" role="status">
-        <span class="sr-only">Loading...</span>
+   let spinner = document.querySelector(".content div");
+        spinner.innerHTML = `
+
+        <div class="text-success">
+            Parabens! Conseguiu concluir o Desafio
+        </div>
+        <div class="spinner-border" role="status">
+            
       </div>
       `;
-     setTimeout(comecar, 700); */
-    comecar();
 }
 async function setGameVariables(){
     for (const value in CHALLENGES) {
@@ -108,10 +127,10 @@ function getChallange001(){
     let u = new challenge001();
    
     setGameContent(u.code);
-    //u.wronAnswer();
     u.btnClicked();
+
     submitEvent("challenge001");
-    //spinner();
+    
 }
 
 function submitEvent(challenge){
@@ -148,4 +167,11 @@ function getChallange004(){
 
     h.btnClicked();
     submitEvent("challenge004");
+}
+function getChallange005(){
+    let f = new challenge005();
+    setGameContent(f.code);
+
+    f.btnClicked();
+    submitEvent("challenge005");
 }
