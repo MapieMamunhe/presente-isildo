@@ -36,7 +36,7 @@ export default class challenge003{
         </div>
         
             <div class="tip"> <h5 >${localStorage.getItem("aniversariante")} saberia..</h5></div>
-            <form class="form" target = "#" method = get>
+            <form class="form">
                 <div>
                 <h3>Escreva o nome correcto</h3></div>
                 <p> 

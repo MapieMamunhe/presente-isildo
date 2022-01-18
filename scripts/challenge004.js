@@ -7,7 +7,7 @@ export default class challenge004{
             <div class="tip"> <h5 >Okay "${localStorage.getItem("aniversariante")}"
             Vamos fazer um joguinho mais intenso agora...</h5></div>
             
-            <form class="form" target = "#" method = get>
+            <form class="form">
                 <p style="color: white; padding: 0px;">${localStorage.getItem("hintNumber")} - Ligue e participe kkkk</p>
                 <div>
                     <h3><label>Coloque a mensagem de acordo com as dicas</label></h3>

@@ -72,16 +72,14 @@ function terminar(){
     let spinner = document.querySelector(".content div");
         spinner.innerHTML = `
 
-        <div class="text-success" style="text-align:center;">
-            Parabens! Conseguiu concluir todos Desafios
-            <p>Teras agora o premio maximo</p>
-        </div>
-            <div class="spinner-border" role="status"></div>
-        <div>
-        <h3>
-            <a href="/portfolio.html" target="_blank" class="btn btn-primary btn-lg enabled" role="button" aria-disabled="true">
-                Me clique </a>
+        <div class="text-success" style="text-align:center; padding: 10px auto;">
+            <h2>Parabens! Conseguiu concluir todos Desafios</h2>
+            <p>Espero que tenhas gostado dos enigmas STV</p>
+            <p>Espero Que gostes do que está ai porque paguei kkkkk</p>
+            <h3>
+                <img src="/img/qr.png" alt="QR Code do presente">
             </h3>
+        </div>
        </div>
       `;
 }

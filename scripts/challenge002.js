@@ -6,7 +6,7 @@ export default class challenge002{
         <link rel="stylesheet" href="/styles/challenge001.css">
         <link rel="stylesheet" href="/styles/challenge002.css">
             <div class="tip"> <h5 >Ainda não me convenceste que és ${localStorage.getItem("aniversariante")}...</h5></div>
-            <form class="form" target = "#" method = get>
+            <form class="form">
                 <div>
                 <h3>Informe os dados </h3></div>
 

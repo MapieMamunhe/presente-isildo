@@ -7,7 +7,7 @@ export default class challenge001{
         this.code = `
         <link rel="stylesheet" href="/styles/challenge001.css">
             <div class="tip"> <h5 >Digite o seu primeiro nome angelical(Lembrar de vovo kkkk)</h5></div>
-            <form class="form" target = "#" method = get>
+            <form class="form">
                 <div>
                 <h3>Informe os dados </h3></div>
                 <p> <label>Nome</label>

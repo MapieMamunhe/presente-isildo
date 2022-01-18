@@ -71,7 +71,7 @@ button, #submeter{
     height: 40px; 
     width: 150px;
 }
-input[type="text"]{
+input[type="text"], input[type="date"], input[type="tel"]{
     border: none;
     border-radius: 5px;
     height: 30px;

@@ -3,3 +3,8 @@ form p{
     place-items: center;
     text-align: center;
 }
+input[type="date"]{
+    align-items: center;
+    text-align: center;
+    display: inline;
+}
