@@ -59,7 +59,7 @@ function challengeCompletedMessage(challenge){
     }
     
     spinner();
-
+    setChallengeCollors();
     if(localStorage.getItem("challenge005")!="completed"){
         setTimeout(()=>{comecar()}, 1500);//TODO spinner e etc
     }else{
@@ -108,8 +108,35 @@ async function setGameVariables(){
             console.log(localStorage.getItem(value))
         }
     }
+    setChallengeCollors();
     localStorage.setItem("hintNumber", "87 38 54 676");
 }
+function setChallengeCollors(){
+    let n = getNextUncompleteChallenge();
+    let divs = document.querySelectorAll(".left div");
+    if(n==-1){
+        for (const iterator of divs) {
+            iterator.style.backgroundColor="#22E4AC";
+            iterator.style.transition="ease-in .2s";
+        }
+        return;
+    }
+    n = n.charAt(n.length-1);
+    if(n > 0){
+        for (let i = 0; i < n-1; i++) {
+            divs[i].style.backgroundColor="#22E4AC";
+            divs[i].style.transition="ease-in .2s";
+        }
+        n = Number(n.charAt(n.length-1));
+       
+        let div = divs[n-1];
+        div.style.backgroundColor="#08B3E5";
+        div.style.transition="ease .2s";
+    }
+    
+
+}
+
 function getNextUncompleteChallenge(){
     for (const value in CHALLENGES) {
         if(localStorage.getItem(value)==CHALLENGES[value]){

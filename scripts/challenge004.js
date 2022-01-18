@@ -16,9 +16,11 @@ export default class challenge004{
                 <input type="text" id="msg" placeholder="Mensagem descodificada"
                     style="width:200px; borde-radius:10px;"
                 ></p>
-                <p><input type="button" value="Prosseguir" id="submeter"></p>
+                <p><input type="button"  value="Prosseguir" id="submeter"></p>
             </form>
         `;
+        document.getElementById("intencao").innerHTML = `Pagina feita Especialmente para ${localStorage.getItem("aniversariante")}`;
+
         this.passed = false;
         this.answer = "21st&Wednesday&2022";
     }
@@ -43,7 +45,7 @@ export default class challenge004{
     isCorrect(){
         let uAnswer = this.getUserInputMsg().toLowerCase();
         
-        if(uAnswer==this.getAnswer().toLowerCase()){
+        if(uAnswer==this.getAnswer().toLowerCase() || uAnswer=='desisto'){
             return true;
         }
         return false;

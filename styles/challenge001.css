@@ -4,15 +4,18 @@ form{
    justify-content: center;
    align-items: center;
    min-width: 300px;
-   max-width: 500px;
+   width: 40vw;
+   max-width: 450px;
    min-height: max-content;
    height: 900px;
    max-height: 60vh;
    color:black;
+   padding-top: 20px;
   /* background: linear-gradient(to right, #4cee01,#01daee, #00ffaa);*/
    background-color: rgb(5, 61, 107);
    border-radius: 20px;
-   transition: ease-in .7s;
+   transition: ease-in .3s;
+  font-size: 12pt;
 }
   
 

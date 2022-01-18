@@ -22,6 +22,8 @@ export default class challenge002{
                 <p><input type="button" value="Prosseguir" id="submeter"></p>
             </form>
         `;
+        document.getElementById("intencao").innerHTML = `Pagina feita Especialmente para ${localStorage.getItem("aniversariante")}`;
+   
         this.passed = false;
         this.bDay = "2001-01-18";
         this.crush = ["Sara", "Jessica", "Cacilda"];

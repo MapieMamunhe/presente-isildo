@@ -39,11 +39,12 @@ export default class challenge003{
             <form class="form" target = "#" method = get>
                 <div>
                 <h3>Escreva o nome correcto</h3></div>
-                <p> <label>Nome</label>
-                <input type="text" id="iName"></p>
+                <p> 
+                <input type="text" id="iName" placeholder="Nome"></p>
                 <p><input type="button" value="Prosseguir" id="submeter"></p>
             </form>
         `;
+        document.getElementById("intencao").innerHTML = `Pagina feita Especialmente para ${localStorage.getItem("aniversariante")}`;
         this.passed = false;
         this.phases = [false, false, false];//Correspondente as fases 1-3 desse desafio
         this.phasesAnswer = ["Late Wizz", "nivel", "cubo"]; 

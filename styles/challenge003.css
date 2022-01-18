@@ -7,6 +7,16 @@
     overflow: hidden;
     
 }
+form{
+  width: 600px;
+  font-size: 12pt;
+  background-color: #053d6b;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 img{
     min-width: 200px;
     min-height: 150px;

@@ -18,6 +18,8 @@ export default class challenge005{
                 <p><input type="button" value="Prosseguir" id="submeter"></p>
             </form>
         `;
+        document.getElementById("intencao").innerHTML = `Pagina feita Especialmente para ${localStorage.getItem("aniversariante")}`;
+   
         this.passed = false;
         this.answer = "conseguiste meu puto kkkk";
     }

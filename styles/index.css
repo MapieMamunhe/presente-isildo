@@ -4,6 +4,12 @@
     box-sizing: border-box;
     
 }
+.active-area{
+    backgroundColor : #08B3E5;
+}
+.passed-challenge{
+    background-color: #22E4AC;
+}
 body{
     color:white;
     display: grid;
@@ -16,7 +22,7 @@ body{
     align-items: center;
     text-align: center;
     height: 100vh;
-    background-color: rgb(5, 61, 107);
+    background-color: #053d6b;
 
 }
 .left div{
@@ -44,14 +50,14 @@ body{
 .top{
     display: grid;
     place-items: center;
-    background-color: rgba(5, 61, 107, 0.911);
+    background-color: #07A8D6;
     height: 100%;
     width: 100%;
 
 }
-button{
+button, #submeter{
     border: none;
-    background-color: rgba(5, 61, 107, 0.911);
+    background-color: #07A8D6;
     width:200px; 
     height: 70px; 
     color:white; 
@@ -60,6 +66,16 @@ button{
     margin: 20px;
     box-shadow: 0px 3px 6px  rgb(0, 0, 0, 0.7); 
     border-radius: 5px;
+}
+#submeter{
+    height: 40px; 
+    width: 150px;
+}
+input[type="text"]{
+    border: none;
+    border-radius: 5px;
+    height: 30px;
+    text-align: center;
 }
 /*Para uma entrada de texto suave*/
 form, .tip {
