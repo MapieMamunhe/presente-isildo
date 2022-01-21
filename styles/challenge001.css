@@ -24,8 +24,6 @@ label{
 }
 form div{
     display: flex;
-    
-    align-items: left;
 }
 form p{
     margin: 10px;
