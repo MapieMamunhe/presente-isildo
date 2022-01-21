@@ -22,6 +22,12 @@ As fases são concluídas mediante a passagem das seguintes mensagens:
 
 Nos campos respectivamente.
 
+## Technologies
+  - JavaScript
+  - Css
+  - Html
+  - BootStrap
+
 ## Getting Started
 
 ### Dependencies
